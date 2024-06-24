@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axum Fullstack</title>
+</head>
+<body>
+<h1>Axum Fullstack Example</h1>
+<button id="fetch-message">Fetch Message</button>
+<p id="message"></p>
+
+<script>
+    document.getElementById('fetch-message').addEventListener('click', async () => {
+        const response = await fetch('/api/message');
+        const data = await response.json();
+        document.getElementById('message').innerText = data.content;
+    });
+</script>
+</body>
+</html>
